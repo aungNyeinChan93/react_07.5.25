@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { memo } from 'react';
 import useGetData from '../hooks/useGetData';
 import SingleCard from './SingleCard';
 
-const ReactCustomeHook = () => {
-    const { data, isError, isLoading } = useGetData(`https://jsonplaceholder.typicode.com/posts`)
 
+// memo( ()=> {} )
+const ReactCustomeHook = memo(() => {
+    const { data, isError, isLoading } = useGetData(`https://jsonplaceholder.typicode.com/posts`)
+    console.count('render')
     if (isError) {
         return (
             <div>
@@ -31,6 +33,6 @@ const ReactCustomeHook = () => {
             </section>
         </React.Fragment>
     );
-};
+});
 
 export default ReactCustomeHook;
