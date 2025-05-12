@@ -4,6 +4,8 @@ import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage';
 import TestPage from './pages/TestPage';
 import NotFoundPage from './pages/NotFoundPage';
+import UserPrefix from './prefix/userPrefix';
+import UserPage from './pages/UserPage';
 
 const router = createBrowserRouter([
     {
@@ -13,6 +15,11 @@ const router = createBrowserRouter([
             { index: true, Component: HomePage },
             { path: 'about', Component: AboutPage },
             { path: 'test', Component: TestPage },
+            {
+                path: 'users', element: <UserPrefix />, children: [
+                    { index: true, Component: UserPage }
+                ]
+            }
         ]
     },
     {
