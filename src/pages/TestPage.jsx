@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import ReactCustomeHook from '../components/ReactCustomeHook';
+// import ReactCustomeHook from '../components/ReactCustomeHook';
+import ReduxTest from '../components/ReduxTest';
 
 
 const TestPage = () => {
@@ -8,7 +9,9 @@ const TestPage = () => {
         <React.Fragment>
             {count}
             <button onClick={() => setCount(pre => pre + 1)}>+</button>
-            <ReactCustomeHook />
+            {/* <ReactCustomeHook />  */}
+            <ReduxTest />
+
         </React.Fragment>
     );
 };

@@ -14,7 +14,7 @@ const SingleRecipe = ({ recipe }) => {
                             <h2 className="text-black dark:text-white w-64 font-bold leading-6 tracking-normal py-4">{recipe?.name}🔥</h2>
                             <p className="text-gray-500 text-sm">{recipe?.cuisine}</p>
                             <div className="img-container pb-8">
-                                <img src={recipe?.image} className="h-44 rounded-md shadow-lg mt-4 object-cover w-full" />
+                                <img src={recipe?.image} className="h-44 rounded-md shadow-lg mt-4 object-cover  w-full" />
                             </div>
                         </div>
                     </Link>
