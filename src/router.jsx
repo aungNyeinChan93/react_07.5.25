@@ -6,6 +6,9 @@ import TestPage from './pages/TestPage';
 import NotFoundPage from './pages/NotFoundPage';
 import UserPrefix from './prefix/userPrefix';
 import UserPage from './pages/UserPage';
+import RecipePrefix from './prefix/RecipePrefix';
+import RecipePage from './pages/RecipePage';
+import DetailRecips from './pages/DetailRecipe';
 
 const router = createBrowserRouter([
     {
@@ -18,6 +21,12 @@ const router = createBrowserRouter([
             {
                 path: 'users', element: <UserPrefix />, children: [
                     { index: true, Component: UserPage }
+                ]
+            },
+            {
+                path: 'recipes', element: <RecipePrefix />, children: [
+                    { index: true, Component: RecipePage },
+                    { path: ':id', Component: DetailRecips },
                 ]
             }
         ]

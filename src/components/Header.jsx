@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router';
+import { ThemeContext } from '../contexts/ThemeProvider';
 
 const Header = () => {
+    const { theme, setTheme, themeChange } = useContext(ThemeContext)
     return (
         <React.Fragment>
-            <header className="bg-white dark:bg-gray-900">
+            <header className={theme.color === 'dark' ? 'bg-dark text-white ' : 'bg-white !text-black '}>
                 <div className="mx-auto flex h-16 max-w-screen-xl items-center gap-8 px-4 sm:px-6 lg:px-8">
                     <Link className="block text-teal-600 dark:text-teal-300" to="/">
                         <span className="sr-only">Home</span>
@@ -38,12 +40,12 @@ const Header = () => {
                                 </li>
 
                                 <li>
-                                    <a
+                                    <Link
                                         className="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
-                                        href="#"
+                                        to="/recipes"
                                     >
-                                        History
-                                    </a>
+                                        Recipes
+                                    </Link>
                                 </li>
 
                                 <li>
@@ -90,6 +92,10 @@ const Header = () => {
                                 >
                                     Register
                                 </a>
+                            </div>
+                            <div>
+                                <p>
+                                    <button onClick={themeChange}>{theme.color}</button></p>
                             </div>
 
                             <button
